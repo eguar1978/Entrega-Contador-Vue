@@ -6,7 +6,8 @@ var app = new Vue({
         valorContador: 1,
         sumaExitosa: 0,
         restaExitosa: 0,
-        restaError: 0
+        restaError: 0,
+        potencia: 0
     },
     methods: {
 
@@ -14,6 +15,7 @@ var app = new Vue({
             this.valorContador = this.valorContador + 1;
             this.errorResta = "";
             this.sumaExitosa = this.sumaExitosa + 1;
+            this.potencia = this.valorContador * this.valorContador;
         },
 
         restar() {
@@ -21,6 +23,7 @@ var app = new Vue({
                 this.valorContador = this.valorContador - 1;
                 this.restaExitosa = this.restaExitosa + 1;
                 this.errorResta = "";
+                this.potencia = this.valorContador * this.valorContador;
             } else {
                 this.errorResta = `<h3 style="color: red;">La cantidad no puede ser inferior a 1</h3>`;
                 this.restaError = this.restaError + 1;
@@ -29,6 +32,7 @@ var app = new Vue({
 
     },
     computed: {
+
 
     }
 })
